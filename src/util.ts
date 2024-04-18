@@ -63,5 +63,5 @@ export const extractErrorMessage = (error: unknown): string =>
   error instanceof Error
     ? error.message
     : typeof error == 'string'
-    ? error
-    : JSON.stringify(error)
+      ? error
+      : JSON.stringify(error)

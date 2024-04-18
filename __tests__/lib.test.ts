@@ -1,11 +1,11 @@
 import {setFailed} from '@actions/core'
 import nock from 'nock'
 import {promises} from 'fs'
-import {GitHubResponse, PrivacyLevel, Urls} from '../src/constants'
+import {GitHubResponse, PrivacyLevel, Status, Urls} from '../src/constants'
 import run from '../src/lib'
 import '../src/main'
 
-export const response: GitHubResponse = {
+const response: GitHubResponse = {
   data: {
     viewer: {
       sponsorshipsAsMaintainer: {
@@ -68,12 +68,12 @@ describe('lib', () => {
   it('should run through the commands and enter a success state', async () => {
     const action = {
       token: '123',
-      file: 'README.test.md',
+      file: '.github/TEST.md',
       template:
         '<a href="https://github.com/{{{ login }}}"><img src="https://github.com/{{{ login }}}.png" width="60px" alt="" /></a>',
       minimum: 0,
       maximum: 0,
-      marker: 'sponsor',
+      marker: 'sponsors',
       organization: false,
       fallback: '',
       activeOnly: true
@@ -85,18 +85,20 @@ describe('lib', () => {
       'Generated README file for testing <!-- sponsor --><!-- sponsor --> - do not commit'
     )
 
-    await run(action)
+    const res = await run(action)
+
+    expect(res).toEqual(Status.SUCCESS)
   })
 
   it('should run through the commands and enter a skipped state', async () => {
     const action = {
       token: '123',
-      file: 'SPONSORS.test.md',
+      file: '.github/TEST.md',
       template:
         '<a href="https://github.com/{{{ login }}}"><img src="https://github.com/{{{ login }}}.png" width="60px" alt="" /></a>',
       minimum: 0,
       maximum: 0,
-      marker: 'sponsors',
+      marker: 'fake-marker',
       organization: false,
       fallback: '',
       activeOnly: true
@@ -105,7 +107,9 @@ describe('lib', () => {
     // Purposely write incorrect data
     await promises.writeFile('SPONSORS.test.md', 'nothing here')
 
-    await run(action)
+    const res = await run(action)
+
+    expect(res).toEqual(Status.SKIPPED)
   })
 
   it('should throw an error if no token is provided', async () => {
@@ -124,7 +128,7 @@ describe('lib', () => {
     try {
       await run(action)
     } catch (error) {
-      expect(setFailed).toBeCalled()
+      expect(setFailed).toHaveBeenCalled()
     }
   })
 })
