@@ -6,11 +6,23 @@ on:
 
 jobs:
   generate-sponsors:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
+      - name: config
+        run: |
+          git config --global extensions.worktreeConfig false
+          git config --global worktree.guessRemoteHEAD false
+          
       - name: Checkout 🛎️
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.1.4 
+        with:
+          persist-credentials: false
 
+      - name: config
+        run: |
+          git config --global extensions.worktreeConfig false
+          git config --global worktree.guessRemoteHEAD false
+        
       - name: Generate Sponsors 💖
         uses: JamesIves/github-sponsors-readme-action@v1
         with:
@@ -32,7 +44,7 @@ jobs:
           active-only: false
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action@releases/v4-flow
         with:
           branch: dev
           folder: '.'
