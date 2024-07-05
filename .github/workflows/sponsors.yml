@@ -8,11 +8,6 @@ jobs:
   generate-sponsors:
     runs-on: ubuntu-latest
     steps:
-      - name: config
-        run: |
-          git config --global extensions.worktreeConfig false
-          git config --global worktree.guessRemoteHEAD false
-
       - name: Checkout 🛎️
         uses: actions/checkout@v4.1.4
         with:
