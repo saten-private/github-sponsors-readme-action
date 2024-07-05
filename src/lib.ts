@@ -14,7 +14,7 @@ import {checkParameters, extractErrorMessage} from './util'
  */
 export default async function run(
   configuration: ActionInterface
-): Promise<void> {
+): Promise<Status> {
   let status: Status = Status.RUNNING
 
   const settings: ActionInterface = {
@@ -73,14 +73,16 @@ export default async function run(
         status === Status.FAILED
           ? 'There was an error generating sponsors. ❌'
           : status === Status.SUCCESS
-          ? 'The data was successfully retrieved and saved! ✅ 💖'
-          : `Unable to locate markers in your file. Please check the documentation and try again. ⚠️`
+            ? 'The data was successfully retrieved and saved! ✅ 💖'
+            : `Unable to locate markers in your file, ensure you have a starting and closing tag in your README file. Please check the documentation and try again. ⚠️`
       }`
     )
 
     exportVariable('sponsorshipStatus', status)
     setEnvironmentOutput('sponsorshipStatus', status)
   }
+
+  return status
 }
 
 export {generateFile, getSponsors, ActionInterface}

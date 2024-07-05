@@ -45,7 +45,7 @@ describe('util', () => {
         checkParameters(action)
       } catch (error) {
         expect(extractErrorMessage(error)).toMatch(
-          'No deployment token was provided. You must provide the action with a Personal Access Token scoped to user:read or org:read.'
+          'No deployment token was provided. You must provide the action with a Personal Access Token scoped to user:read and org:read.'
         )
       }
     })

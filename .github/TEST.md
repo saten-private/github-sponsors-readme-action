@@ -2,8 +2,7 @@
 
 # All Sponsors
 
-<!-- sponsors -->
-<!-- sponsors -->
+<!-- sponsors --><a href="https://github.com/JamesIves"><img src="https://github.com/JamesIves.png" width="60px" alt="" /></a><a href="https://github.com/MontezumaIves"><img src="https://github.com/MontezumaIves.png" width="60px" alt="" /></a><!-- sponsors -->
 
 # Silver Sponsors
 
