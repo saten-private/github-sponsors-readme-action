@@ -69,7 +69,7 @@ describe('template', () => {
       }
 
       expect(generateTemplate(response, action)).toEqual(
-        '<a href="https://github.com/JamesIves"><img src="https://github.com/JamesIves.png" width="60px" alt="" /><span>https://jamesiv.es</span></a><a href="https://github.com/MontezumaIves"><img src="https://github.com/MontezumaIves.png" width="60px" alt="" /><span>https://jamesiv.es</span></a>'
+        '<a href="https://github.com/JamesIves"><img src="https://github.com/JamesIves.png" width="60px" alt="" /><span>https:&#x2F;&#x2F;jamesiv.es</span></a><a href="https://github.com/MontezumaIves"><img src="https://github.com/MontezumaIves.png" width="60px" alt="" /><span>https:&#x2F;&#x2F;jamesiv.es</span></a>'
       )
     })
 
@@ -129,7 +129,7 @@ describe('template', () => {
       }
 
       expect(generateTemplate(response, action)).toEqual(
-        '<a href="https://github.com/JamesIves"><img src="https://github.com/JamesIves.png" width="60px" alt="" /><span>https://jamesiv.es</span></a><a href="https://github.com/MontezumaIves"><img src="https://github.com/MontezumaIves.png" width="60px" alt="" /><span>https://jamesiv.es</span></a>'
+        '<a href="https://github.com/JamesIves"><img src="https://github.com/JamesIves.png" width="60px" alt="&amp;gt;HELLO!!!!" /><span>https:&#x2F;&#x2F;jamesiv.es</span></a><a href="https://github.com/MontezumaIves"><img src="https://github.com/MontezumaIves.png" width="60px" alt="&amp;gt;HELLO!!!!" /><span>https:&#x2F;&#x2F;jamesiv.es</span></a>'
       )
     })
 
@@ -189,7 +189,7 @@ describe('template', () => {
       }
 
       expect(generateTemplate(response, action)).toEqual(
-        '<a href="https://github.com/JamesIves"><img src="https://github.com/JamesIves.png" width="60px" alt="" /></a><a href="https://github.com/MontezumaIves"><img src="https://github.com/MontezumaIves.png" width="60px" alt="" /></a>'
+        '<a href="https:&#x2F;&#x2F;github.com&#x2F;JamesIves"><img src="https://github.com/JamesIves.png" width="60px" alt="" /></a><a href="https:&#x2F;&#x2F;github.com&#x2F;MontezumaIves"><img src="https://github.com/MontezumaIves.png" width="60px" alt="" /></a>'
       )
     })
 

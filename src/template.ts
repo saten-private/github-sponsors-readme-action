@@ -135,14 +135,20 @@ export function generateTemplate(
     }
 
     filteredSponsors.map(({sponsorEntity}) => {
+      /**
+       * Sanitizes and cleans the sponsor data individually.
+       */
       const sanitizedSponsorEntity = {
         websiteUrl: sanitizeAndClean(
           sponsorEntity.websiteUrl || sponsorEntity.url
         ),
         name: sanitizeAndClean(sponsorEntity.name || ''),
-        login: sponsorEntity.login
+        login: sanitizeAndClean(sponsorEntity.login)
       }
 
+      /**
+       * Ensure that the template is safe to render by preventing the usage of triple brackets.
+       */
       const safeTemplate = replaceAll(
         replaceAll(action.template, '{{{', '{{'),
         '}}}',
