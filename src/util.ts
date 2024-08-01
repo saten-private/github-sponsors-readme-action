@@ -5,7 +5,7 @@ import DOMPurify from 'dompurify'
 /**
  * Defines the a new virtual DOM.
  */
-const window = new JSDOM('').window
+const {window} = new JSDOM('')
 
 /**
  * Sanitizes the input.
@@ -84,11 +84,11 @@ export const extractErrorMessage = (error: unknown): string =>
 /**
  * Sanitizes and cleans an input.
  */
-export const sanitizeAndClean = (input: string) => {
+export const sanitizeAndClean = (input: string): string => {
   const sanitizedInput = sanitize(input, {
     ALLOWED_TAGS: [],
     ALLOWED_ATTR: []
   })
 
-  return sanitizedInput.replace(/[\"'<>]/g, '')
+  return sanitizedInput.replace(/["'<>]/g, '');
 }
