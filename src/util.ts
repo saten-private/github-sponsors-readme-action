@@ -89,5 +89,6 @@ export const sanitizeAndClean = (input: string) => {
     ALLOWED_TAGS: [],
     ALLOWED_ATTR: []
   })
-  return sanitizedInput.replace(/[">}]/g, '')
+  
+  return sanitizedInput.replace(/[\"'<>]/g, '');
 }
