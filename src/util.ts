@@ -90,5 +90,5 @@ export const sanitizeAndClean = (input: string): string => {
     ALLOWED_ATTR: []
   })
 
-  return sanitizedInput.replace(/["'<>]/g, '');
+  return sanitizedInput.replace(/["'<>]/g, '')
 }
