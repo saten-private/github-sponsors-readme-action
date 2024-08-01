@@ -22,4 +22,4 @@ export declare const extractErrorMessage: (error: unknown) => string;
 /**
  * Sanitizes and cleans an input.
  */
-export declare const sanitizeAndClean: (input: string) => any;
+export declare const sanitizeAndClean: (input: string) => string;
