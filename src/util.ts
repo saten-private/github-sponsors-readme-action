@@ -33,8 +33,11 @@ export const checkParameters = (action: ActionInterface): void => {
 /**
  * Replaces all instances of a match in a string.
  */
-const replaceAll = (input: string, find: string, replace: string): string =>
-  input.split(find).join(replace)
+export const replaceAll = (
+  input: string,
+  find: string,
+  replace: string
+): string => input.split(find).join(replace)
 
 /**
  * Suppresses sensitive information from being exposed in error messages.
