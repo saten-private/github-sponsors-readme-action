@@ -1,4 +1,16 @@
 import {ActionInterface, RequiredActionParameters} from './constants'
+import {JSDOM} from 'jsdom'
+import DOMPurify from 'dompurify'
+
+/**
+ * Defines the a new virtual DOM.
+ */
+const window = new JSDOM('').window
+
+/**
+ * Sanitizes the input.
+ */
+const {sanitize} = DOMPurify(window)
 
 /**
  * Utility function that checks to see if a value is undefined or not.
@@ -68,3 +80,14 @@ export const extractErrorMessage = (error: unknown): string =>
     : typeof error == 'string'
       ? error
       : JSON.stringify(error)
+
+/**
+ * Sanitizes and cleans an input.
+ */
+export const sanitizeAndClean = (input: string) => {
+  const sanitizedInput = sanitize(input, {
+    ALLOWED_TAGS: [],
+    ALLOWED_ATTR: []
+  })
+  return sanitizedInput.replace(/[">}]/g, '')
+}
