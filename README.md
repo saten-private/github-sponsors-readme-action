@@ -34,11 +34,11 @@
 </p>
 
 <p align="center">
-<!-- real-premium --><a href="https://github.com/github"><img src="https://github.com/github.png" width="80px" alt="github" /></a>&nbsp;&nbsp;<a href="https://github.com/annegentle"><img src="https://github.com/annegentle.png" width="80px" alt="annegentle" /></a>&nbsp;&nbsp;<!-- real-premium -->
+<!-- real-premium --><a href="https://github.com/github"><img src="https://github.com/github.png" width="80px" alt="GitHub" /></a>&nbsp;&nbsp;<a href="https://github.com/annegentle"><img src="https://github.com/annegentle.png" width="80px" alt="Anne Gentle" /></a>&nbsp;&nbsp;<!-- real-premium -->
 </p>
 
 <p align="center">
-<!-- real-sponsors --><a href="https://github.com/Chooksta69"><img src="https://github.com/Chooksta69.png" width="50px" alt="Chooksta69" /></a>&nbsp;&nbsp;<a href="https://github.com/MattWillFlood"><img src="https://github.com/MattWillFlood.png" width="50px" alt="MattWillFlood" /></a>&nbsp;&nbsp;<a href="https://github.com/jonathan-milan-pollock"><img src="https://github.com/jonathan-milan-pollock.png" width="50px" alt="jonathan-milan-pollock" /></a>&nbsp;&nbsp;<a href="https://github.com/raoulvdberge"><img src="https://github.com/raoulvdberge.png" width="50px" alt="raoulvdberge" /></a>&nbsp;&nbsp;<a href="https://github.com/robjtede"><img src="https://github.com/robjtede.png" width="50px" alt="robjtede" /></a>&nbsp;&nbsp;<a href="https://github.com/hadley"><img src="https://github.com/hadley.png" width="50px" alt="hadley" /></a>&nbsp;&nbsp;<a href="https://github.com/kevinchalet"><img src="https://github.com/kevinchalet.png" width="50px" alt="kevinchalet" /></a>&nbsp;&nbsp;<a href="https://github.com/Yousazoe"><img src="https://github.com/Yousazoe.png" width="50px" alt="Yousazoe" /></a>&nbsp;&nbsp;<a href="https://github.com/planetoftheweb"><img src="https://github.com/planetoftheweb.png" width="50px" alt="planetoftheweb" /></a>&nbsp;&nbsp;<a href="https://github.com/melton1968"><img src="https://github.com/melton1968.png" width="50px" alt="melton1968" /></a>&nbsp;&nbsp;<a href="https://github.com/szepeviktor"><img src="https://github.com/szepeviktor.png" width="50px" alt="szepeviktor" /></a>&nbsp;&nbsp;<a href="https://github.com/sckott"><img src="https://github.com/sckott.png" width="50px" alt="sckott" /></a>&nbsp;&nbsp;<a href="https://github.com/provinzkraut"><img src="https://github.com/provinzkraut.png" width="50px" alt="provinzkraut" /></a>&nbsp;&nbsp;<a href="https://github.com/electrovir"><img src="https://github.com/electrovir.png" width="50px" alt="electrovir" /></a>&nbsp;&nbsp;<a href="https://github.com/Griefed"><img src="https://github.com/Griefed.png" width="50px" alt="Griefed" /></a>&nbsp;&nbsp;<!-- real-sponsors -->
+<!-- real-sponsors --><a href="https://github.com/Chooksta69"><img src="https://github.com/Chooksta69.png" width="50px" alt="" /></a>&nbsp;&nbsp;<a href="https://github.com/MattWillFlood"><img src="https://github.com/MattWillFlood.png" width="50px" alt="Matt" /></a>&nbsp;&nbsp;<a href="https://github.com/jonathan-milan-pollock"><img src="https://github.com/jonathan-milan-pollock.png" width="50px" alt="Jonathan Milan Pollock, MS" /></a>&nbsp;&nbsp;<a href="https://github.com/raoulvdberge"><img src="https://github.com/raoulvdberge.png" width="50px" alt="Raoul" /></a>&nbsp;&nbsp;<a href="https://github.com/robjtede"><img src="https://github.com/robjtede.png" width="50px" alt="Rob Ede" /></a>&nbsp;&nbsp;<a href="https://github.com/hadley"><img src="https://github.com/hadley.png" width="50px" alt="Hadley Wickham" /></a>&nbsp;&nbsp;<a href="https://github.com/kevinchalet"><img src="https://github.com/kevinchalet.png" width="50px" alt="Kévin Chalet" /></a>&nbsp;&nbsp;<a href="https://github.com/Yousazoe"><img src="https://github.com/Yousazoe.png" width="50px" alt="Yousazoe" /></a>&nbsp;&nbsp;<a href="https://github.com/planetoftheweb"><img src="https://github.com/planetoftheweb.png" width="50px" alt="Ray Villalobos" /></a>&nbsp;&nbsp;<a href="https://github.com/melton1968"><img src="https://github.com/melton1968.png" width="50px" alt="Mark Melton" /></a>&nbsp;&nbsp;<a href="https://github.com/szepeviktor"><img src="https://github.com/szepeviktor.png" width="50px" alt="Viktor Szépe" /></a>&nbsp;&nbsp;<a href="https://github.com/sckott"><img src="https://github.com/sckott.png" width="50px" alt="Scott Chamberlain" /></a>&nbsp;&nbsp;<a href="https://github.com/provinzkraut"><img src="https://github.com/provinzkraut.png" width="50px" alt="Janek Nouvertné" /></a>&nbsp;&nbsp;<a href="https://github.com/electrovir"><img src="https://github.com/electrovir.png" width="50px" alt="electrovir" /></a>&nbsp;&nbsp;<a href="https://github.com/Griefed"><img src="https://github.com/Griefed.png" width="50px" alt="Griefed" /></a>&nbsp;&nbsp;<a href="https://github.com/MontezumaIves"><img src="https://github.com/MontezumaIves.png" width="50px" alt="Test&quot;&gt;&lt;h1&gt;TEST!&lt;&#x2F;h1&gt;" /></a>&nbsp;&nbsp;<!-- real-sponsors -->
 </p>
 
 ## Getting Started ✈️
@@ -154,12 +154,12 @@ The action will export a step output as `sponsorship-status` that you can use in
 
 You can modify the template that gets generated in your file by using the `template` input. This input allows you to leverage mustache templating to modify what is displayed. The following values are available.
 
-| Status       | Description                                                                                                                                                                |
-| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name`       | The users full name. This can sometimes be `null` if the user hasn't set one. This can be accessed using `{{{ name }}}`                                                    |
-| `login`      | The users login, this can be accessed using `{{{ login }}}`                                                                                                                |
-| `url`        | The users GitHub profile url, this can be accessed using `{{{ url }}}`.                                                                                                    |
-| `websiteUrl` | The users website url. This can sometimes be `null` if the user hasn't set one, if so this field will fall back to `url`. This can be accessed using `{{{ websiteUrl }}}`. |
+| Status       | Description                                                                                                                                                              |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `name`       | The users full name. This can sometimes be `null` if the user hasn't set one. This can be accessed using `{{ name }}`                                                    |
+| `login`      | The users login, this can be accessed using `{{ login }}`                                                                                                                |
+| `url`        | The users GitHub profile url, this can be accessed using `{{ url }}`.                                                                                                    |
+| `websiteUrl` | The users website url. This can sometimes be `null` if the user hasn't set one, if so this field will fall back to `url`. This can be accessed using `{{ websiteUrl }}`. |
 
 You're able to use markdown or GitHub approved basic HTML. The default template can be found [here](./src/constants.ts#L28).
 
@@ -186,7 +186,7 @@ jobs:
         with:
           token: ${{ secrets.PAT }}
           file: 'README.md'
-          template: '* [{{{ name }}}]({{{ url }}}) - {{{ login }}}'
+          template: '* [{{ name }}]({{ url }}) - {{ login }}'
 
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4
