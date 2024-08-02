@@ -119,7 +119,7 @@ describe('template', () => {
         token: '123',
         file: 'README.test.md',
         template:
-          '<a href="https://github.com/{{{ login }}}"><img src="https://github.com/{{{ login }}}.png" width="60px" alt="{{{ name }}}" /><span>{{{ websiteUrl}}}</span></a>',
+          '<a href="https://github.com/{{ login }}"><img src="https://github.com/{{ login }}.png" width="60px" alt="{{ name }}" /><span>{{ websiteUrl}}</span></a>',
         minimum: 0,
         maximum: 0,
         marker: 'sponsors',
