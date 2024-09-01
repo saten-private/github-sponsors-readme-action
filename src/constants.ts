@@ -65,7 +65,7 @@ export interface Sponsor {
     websiteUrl: string | null
   }
   createdAt: string
-  privacyLevel: PrivacyLevel
+  privacyLevel?: PrivacyLevel
   tier?: {
     monthlyPriceInCents?: number
   }
