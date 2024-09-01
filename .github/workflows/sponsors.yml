@@ -20,7 +20,7 @@ jobs:
           git config --global worktree.guessRemoteHEAD false
 
       - name: Generate Sponsors 💖
-        uses: JamesIves/github-sponsors-readme-action@releases/v1-beta
+        uses: JamesIves/github-sponsors-readme-action@releases/v1-private
         with:
           token: ${{ secrets.PAT }}
           file: 'README.md'
@@ -28,9 +28,10 @@ jobs:
           maximum: 2499
           marker: 'real-sponsors'
           active-only: false
+          include-private: true
 
       - name: Generate Sponsors 💖
-        uses: JamesIves/github-sponsors-readme-action@v1
+        uses: JamesIves/github-sponsors-readme-action@releases/v1-private
         with:
           token: ${{ secrets.PAT }}
           file: 'README.md'
@@ -38,6 +39,7 @@ jobs:
           template: '<a href="https://github.com/{{{ login }}}"><img src="https://github.com/{{{ login }}}.png" width="80px" alt="{{{ login }}}" /></a>&nbsp;&nbsp;'
           marker: 'real-premium'
           active-only: false
+          include-private: true
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
