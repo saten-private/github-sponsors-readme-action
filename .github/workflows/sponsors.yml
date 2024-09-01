@@ -39,7 +39,7 @@ jobs:
           template: '<a href="https://github.com/{{{ login }}}"><img src="{{{ avatarUrl }}}" width="80px" alt="{{{ login }}}" /></a>&nbsp;&nbsp;'
           marker: 'real-premium'
           active-only: false
-          include-private: true
+          include-private: false
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
