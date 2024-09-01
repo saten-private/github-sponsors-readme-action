@@ -111,10 +111,10 @@ export function generateTemplate(
 
   if (sponsorshipsAsMaintainer) {
     /* Appends the template, the API call returns all users regardless of if they are hidden or not.
-  In an effort to respect a users decision to be anonymous we filter these users out. */
+      In an effort to respect a users decision to be anonymous we filter these users out. */
     let filteredSponsors = sponsorshipsAsMaintainer.nodes.filter(
       (user: Sponsor) =>
-        user.privacyLevel !== PrivacyLevel.PRIVATE &&
+        user.privacyLevel && (user.privacyLevel !== PrivacyLevel.PRIVATE) &&
         (user.tier && user.tier.monthlyPriceInCents
           ? user.tier.monthlyPriceInCents
           : 0) >= action.minimum
