@@ -163,7 +163,7 @@ You can modify the template that gets generated in your file by using the `templ
 | `avatarUrl`  | The users avatar url, this can be accessed using `{{ avatarUrl }}`.                                                                                                      |
 | `websiteUrl` | The users website url. This can sometimes be `null` if the user hasn't set one, if so this field will fall back to `url`. This can be accessed using `{{ websiteUrl }}`. |
 
-You're able to use markdown or GitHub approved basic HTML. The default template can be found [here](./src/constants.ts#L28).
+You're able to use markdown or GitHub approved basic HTML. The default template can be found [here](./src/constants.ts#L38).
 
 <details><summary>You can view a full example of this here.</summary>
 <p>
