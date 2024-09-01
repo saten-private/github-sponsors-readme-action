@@ -136,7 +136,7 @@ The following options must be configured.
 | `fallback`     | Allows you to specify a fallback if you have no sponsors. By default nothing is displayed.                                                                                                                                                                        | `with` | **No**   |
 | `template`     | Allows you to modify the default template. Please refer to the `template` section of this README for more information.                                                                                                                                            | `with` | **No**   |
 | `active-only`  | If set to `false`, inactive sponsors will be displayed. This can be useful if you want to display all sponsors, regardless of their status. By default this is set to `true`.                                                                                     | `with` | **No**   |
-| `include-private`  | If set to `true`, sponsors who have marked their privacy settings to `private` will be displayed in an anonymized way.                                                                                    | `with` | **No**   |
+| `include-private`  | If set to `true`, private sponsors will be displayed in the list, however any identifying information will be redacted. This can be useful if you want to display all sponsors, regardless of their privacy settings.                                                                                    | `with` | **No**   |
 
 #### Deployment Status
 
