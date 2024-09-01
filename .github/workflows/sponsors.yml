@@ -20,7 +20,7 @@ jobs:
           git config --global worktree.guessRemoteHEAD false
 
       - name: Generate Sponsors 💖
-        uses: JamesIves/github-sponsors-readme-action@releases/v1-private
+        uses: JamesIves/github-sponsors-readme-action@v1
         with:
           token: ${{ secrets.PAT }}
           file: 'README.md'
@@ -31,7 +31,7 @@ jobs:
           include-private: false
 
       - name: Generate Sponsors 💖
-        uses: JamesIves/github-sponsors-readme-action@releases/v1-private
+        uses: JamesIves/github-sponsors-readme-action@v1
         with:
           token: ${{ secrets.PAT }}
           file: 'README.md'
