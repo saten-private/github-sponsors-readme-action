@@ -28,7 +28,7 @@ jobs:
           maximum: 2499
           marker: 'real-sponsors'
           active-only: false
-          include-private: true
+          include-private: false
 
       - name: Generate Sponsors 💖
         uses: JamesIves/github-sponsors-readme-action@releases/v1-private
