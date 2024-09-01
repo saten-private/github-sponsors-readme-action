@@ -37,7 +37,7 @@ export async function getSponsors(
           : `viewer`
       } {
         login
-        sponsorshipsAsMaintainer(first: 100, orderBy: {field: CREATED_AT, direction: ASC}, includePrivate: true, activeOnly: ${
+        sponsorshipsAsMaintainer(first: 100, orderBy: {field: CREATED_AT, direction: ASC}, includePrivate: false, activeOnly: ${
           action.activeOnly
         }) {
           totalCount
@@ -111,7 +111,7 @@ export function generateTemplate(
 
   if (sponsorshipsAsMaintainer) {
     /* Appends the template, the API call returns all users regardless of if they are hidden or not.
-      In an effort to respect a users decision to be anonymous we filter these users out. */
+      In an effort to totally respect a users decision to be anonymous we filter these users out even though the `includePrivate` flag is set to `false`, just in case. */
     let filteredSponsors = sponsorshipsAsMaintainer.nodes.filter(
       (user: Sponsor) =>
         user.privacyLevel &&
