@@ -46,7 +46,9 @@
 You can include the action in your workflow to trigger on any event that [GitHub Actions supports](https://help.github.com/en/articles/events-that-trigger-workflows).
 
 > [!IMPORTANT]
-> You'll need to provide the action with a **Personal Access Token (PAT)** scoped to `read:user` and `read:org`. This action only applies the template within the workspace. You will need to combine it with a deployment action in order to commit it to your project. You can see a full example of this below.
+> You'll need to provide the action with a **Personal Access Token (PAT)** scoped to `read:user` and `read:org`.
+>
+> Additionally, this action only applies the template within the workspace. You will need to combine it with a deployment action in order to commit it to your project. You can see a full example of this below.
 
 ```yml
 name: Generate Sponsors README
@@ -69,6 +71,7 @@ jobs:
           token: ${{ secrets.PAT }}
           file: 'README.md'
 
+      # ⚠️ Note: You can use any deployment step here to automatically push the README changes back to your branch.
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
@@ -89,6 +92,8 @@ These are our really cool sponsors!
 
 <!-- sponsors --><!-- sponsors -->
 ```
+
+> [!TIP] > [Looking for a more guided walkthrough on setting up this action? Check out this article!](https://jamesiv.es/blog/github/actions/2023/06/30/add-your-github-sponsors-to-your-project-readme)
 
 #### Install as a Node Module 📦
 
