@@ -114,7 +114,9 @@ It can then be imported into your project like so.
 ```javascript
 import run from '@jamesives/github-sponsors-readme-action'
 
-run(configuration)
+run({
+  token: process.env.GITHUB_TOKEN
+})
 ```
 
 Calling the functions directly will require you to pass in an object containing the variables found in the [configuration section](https://github.com/JamesIves/github-sponsors-readme-action#configuration-).

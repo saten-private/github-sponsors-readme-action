@@ -12,8 +12,8 @@
     "test": "jest",
     "lint": "eslint --fix .",
     "lint:check": "eslint .",
-    "lint:fix": "prettier --write .",
-    "lint:fix:check": "prettier --check ."
+    "lint:format": "prettier --write .",
+    "lint:format:check": "prettier --check ."
   },
   "repository": {
     "type": "git",
