@@ -159,7 +159,7 @@ export function generateTemplate(
     }
 
     info(
-      `Found ${filteredSponsors.length} matching sponsors… ${filteredSponsors.length > 0 ? '🎉' : '😢'}`
+      `Found ${filteredSponsors.length} matching ${filteredSponsors.length === 1 ? 'sponsor' : 'sponsors'}… ${filteredSponsors.length > 0 ? '🎉' : '😢'}`
     )
 
     /**
