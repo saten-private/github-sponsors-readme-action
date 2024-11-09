@@ -1,4 +1,3 @@
-import 'cross-fetch/polyfill'
 import {promises} from 'fs'
 import {
   ActionInterface,
@@ -105,9 +104,17 @@ export function generateTemplate(
 
   info('Generating template… ✨')
 
-  const data = action.organization
-    ? response.data.organization
-    : response.data.viewer
+  /**
+   * Determines if the response is from an organization or a user.
+   * Performs checks to see if the data is available before we
+   * reference it as the API results can be somewhat sporadic.
+   */
+  const data =
+    action.organization && response?.data?.organization
+      ? response?.data?.organization
+      : response?.data?.viewer
+        ? response?.data?.viewer
+        : null
 
   const sponsorshipsAsMaintainer = data?.sponsorshipsAsMaintainer
 
@@ -195,6 +202,8 @@ export function generateTemplate(
     })
   } else {
     info(`No sponsorship data was found… ❌`)
+
+    return action.fallback
   }
 
   return template
