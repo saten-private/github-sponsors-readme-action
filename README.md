@@ -144,7 +144,7 @@ The following options must be configured.
 | `marker`          | This allows you to modify the marker comment that is placed in your file. By default this is set to sponsors - `<!-- sponsors --> <!-- sponsors -->`, if you set this to `gold` for example you can place `<!-- gold --> <!-- gold -->` in your file.             | `with` | **No**   |
 | `fallback`        | Allows you to specify a fallback if you have no sponsors. By default nothing is displayed.                                                                                                                                                                        | `with` | **No**   |
 | `tier-templates-json`        | JSON string containing tier-specific templates. Format: { "tier_id": "template" }.
-Example: '{"123456": "<img src=\"{{{ avatar }}}\" width=\"35px\">", "234567": "<h2>{{{ name }}}</h2>"'                                                               | `with` | **No**   |
+Example: '{"123456": "%3Ca+href%3D%22https%3A%2F%2Fgithub.com%2F%7B%7B+login+%7D%7D%22%3E%3Cimg+src%3D%22%7B%7B+avatarUrl+%7D%7D%22+width%3D%2260px%22+alt%3D%22%7B%7B+name+%7D%7D%22+%2F%3E%3C%2Fa%3E"}'                                                               | `with` | **No**   |
 | `active-only`     | If set to `false`, inactive sponsors will be displayed. This can be useful if you want to display all sponsors, regardless of their status. By default this is set to `true`.                                                                                     | `with` | **No**   |
 | `include-private` | If set to `true`, private sponsors will be displayed in the list, however any identifying information will be redacted. This can be useful if you want to display all sponsors, regardless of their privacy settings.                                             | `with` | **No**   |
 
@@ -198,7 +198,7 @@ jobs:
         with:
           token: ${{ secrets.PAT }}
           file: 'README.md'
-          tier-templates-json: '{"123456": "<img src=\"{{{ avatar }}}\" width=\"35px\">", "234567": "<h2>{{{ name }}}</h2>"}'
+          tier-templates-json: '{"123456": "%3Ca+href%3D%22https%3A%2F%2Fgithub.com%2F%7B%7B+login+%7D%7D%22%3E%3Cimg+src%3D%22%7B%7B+avatarUrl+%7D%7D%22+width%3D%2260px%22+alt%3D%22%7B%7B+name+%7D%7D%22+%2F%3E%3C%2Fa%3E"}'
 
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4

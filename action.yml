@@ -39,7 +39,7 @@ inputs:
   tier-templates-json:
     description: >
       JSON string containing tier-specific templates. Format: { "tier_id": "template" }.
-      Example: '{"123456": "<img src=\"{{{ avatar }}}\" width=\"35px\">", "234567": "<h2>{{{ name }}}</h2>"}'
+      Example: '{"123456": "%3Ca+href%3D%22https%3A%2F%2Fgithub.com%2F%7B%7B+login+%7D%7D%22%3E%3Cimg+src%3D%22%7B%7B+avatarUrl+%7D%7D%22+width%3D%2260px%22+alt%3D%22%7B%7B+name+%7D%7D%22+%2F%3E%3C%2Fa%3E"}'
     required: false
 
   fallback:
