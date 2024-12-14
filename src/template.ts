@@ -100,7 +100,8 @@ export async function getSponsors(
 export function generateTemplate(
   response: GitHubResponse,
   action: ActionInterface,
-  baseTemplate: string
+  baseTemplate: string,
+  tierId: string
 ): string {
   let template = ``
 
@@ -125,7 +126,7 @@ export function generateTemplate(
       (user: Sponsor) =>
         (user.tier && user.tier.monthlyPriceInCents
           ? user.tier.monthlyPriceInCents
-          : 0) >= action.minimum
+          : 0) >= action.minimum && (user.tier && user.tier.id === tierId)
     )
 
     /**
@@ -235,7 +236,7 @@ export async function generateFile(
       
       if (tierRegex.test(data)) {
         // tierTemplate用に一時的にtemplateを置き換えて処理
-        data = data.replace(tierRegex, `$1${generateTemplate(response, action, template)}$2`)
+        data = data.replace(tierRegex, `$1${generateTemplate(response, action, template, key)}$2`)
         hasMatches = true
       }
     });
