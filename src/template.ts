@@ -229,7 +229,7 @@ export async function generateFile(
     Object.keys(tierTemplates).forEach(key => {
       const template = decodeURIComponent(tierTemplates[key]);
       const tierRegex = new RegExp(
-        `(<!-- ${action.marker}.${key} -->)[\\s\\S]*?(<!-- ${action.marker}.${key} -->)`,
+        `(<!-- ${action.marker}-${key} -->)[\\s\\S]*?(<!-- ${action.marker}-${key} -->)`,
         'g'
       );
       
