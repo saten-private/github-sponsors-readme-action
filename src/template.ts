@@ -122,6 +122,7 @@ export function generateTemplate(
   const sponsorshipsAsMaintainer = data?.sponsorshipsAsMaintainer
 
   if (sponsorshipsAsMaintainer) {
+    console.log("sponsorshipsAsMaintainer" ,sponsorshipsAsMaintainer)
     let filteredSponsors = sponsorshipsAsMaintainer.nodes.filter(
       (user: Sponsor) =>
         (user.tier && user.tier.monthlyPriceInCents
