@@ -64,6 +64,8 @@ export async function getSponsors(
             privacyLevel
             tier {
               id
+              name
+              description
               monthlyPriceInCents
             }
           }
