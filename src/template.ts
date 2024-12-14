@@ -123,6 +123,7 @@ export function generateTemplate(
 
   if (sponsorshipsAsMaintainer) {
     console.log("sponsorshipsAsMaintainer" ,sponsorshipsAsMaintainer)
+    console.log("tierId" ,tierId)
     let filteredSponsors = sponsorshipsAsMaintainer.nodes.filter(
       (user: Sponsor) => {
         console.log("tier info:", user.tier)
