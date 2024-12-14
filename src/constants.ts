@@ -12,7 +12,7 @@ export interface ActionInterface {
   /**
    * The template to use.
    */
-  template: string
+  tierTemplatesJson: string
   /**
    * The file to replace the content in.
    */
@@ -53,9 +53,7 @@ export interface ActionInterface {
  */
 export const action = {
   token: getInput('token'),
-  template: !isNullOrUndefined(getInput('template'))
-    ? getInput('template')
-    : `<a href="https://github.com/{{ login }}"><img src="{{ avatarUrl }}" width="60px" alt="{{ name }}" /></a>`,
+  tierTemplatesJson: getInput('tier-templates-json'),
   minimum: !isNullOrUndefined(getInput('minimum'))
     ? parseInt(getInput('minimum'))
     : 0,
@@ -94,6 +92,7 @@ export interface Sponsor {
   createdAt: string
   privacyLevel?: PrivacyLevel
   tier?: {
+    id: string
     monthlyPriceInCents?: number
   }
 }

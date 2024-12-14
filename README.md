@@ -143,7 +143,8 @@ The following options must be configured.
 | `maximum`         | Using this input you can set the maximum sponsorship threshold. For example setting this to `500` will only display sponsors who give of `$5 USD` and less. By default the action will display all of your sponsors.                                              | `with` | **No**   |
 | `marker`          | This allows you to modify the marker comment that is placed in your file. By default this is set to sponsors - `<!-- sponsors --> <!-- sponsors -->`, if you set this to `gold` for example you can place `<!-- gold --> <!-- gold -->` in your file.             | `with` | **No**   |
 | `fallback`        | Allows you to specify a fallback if you have no sponsors. By default nothing is displayed.                                                                                                                                                                        | `with` | **No**   |
-| `template`        | Allows you to modify the default template. Please refer to the `template` section of this README for more information.                                                                                                                                            | `with` | **No**   |
+| `tier-templates-json`        | JSON string containing tier-specific templates. Format: { "tier_id": "template" }.
+Example: '{"123456": "<img src=\"{{{ avatar }}}\" width=\"35px\">", "234567": "<h2>{{{ name }}}</h2>"'                                                               | `with` | **No**   |
 | `active-only`     | If set to `false`, inactive sponsors will be displayed. This can be useful if you want to display all sponsors, regardless of their status. By default this is set to `true`.                                                                                     | `with` | **No**   |
 | `include-private` | If set to `true`, private sponsors will be displayed in the list, however any identifying information will be redacted. This can be useful if you want to display all sponsors, regardless of their privacy settings.                                             | `with` | **No**   |
 
@@ -162,7 +163,7 @@ The action will export a step output as `sponsorship-status` that you can use in
 
 ### Modifying the Template 🔧
 
-You can modify the template that gets generated in your file by using the `template` input. This input allows you to leverage mustache templating to modify what is displayed. The following values are available.
+You can modify the template for each tier that gets generated in your file by using the `tier-templates-json` input. This input allows you to leverage mustache templating to modify what is displayed. The following values are available.
 
 | Status       | Description                                                                                                                                                              |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -197,7 +198,7 @@ jobs:
         with:
           token: ${{ secrets.PAT }}
           file: 'README.md'
-          template: '* [{{ name }}]({{ url }}) - {{ login }}'
+          tier-templates-json: '{"123456": "<img src=\"{{{ avatar }}}\" width=\"35px\">", "234567": "<h2>{{{ name }}}</h2>"}'
 
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4

@@ -63,6 +63,7 @@ export async function getSponsors(
             createdAt
             privacyLevel
             tier {
+              id
               monthlyPriceInCents
             }
           }
@@ -98,7 +99,8 @@ export async function getSponsors(
  */
 export function generateTemplate(
   response: GitHubResponse,
-  action: ActionInterface
+  action: ActionInterface,
+  baseTemplate: string
 ): string {
   let template = ``
 
@@ -193,7 +195,7 @@ export function generateTemplate(
        * Ensure that the template is safe to render by preventing the usage of triple brackets.
        */
       const safeTemplate = replaceAll(
-        replaceAll(action.template, '{{{', '{{'),
+        replaceAll(baseTemplate, '{{{', '{{'),
         '}}}',
         '}}'
       )
@@ -219,21 +221,30 @@ export async function generateFile(
   try {
     info(`Generating updated ${action.file} file… 📁`)
 
-    /** Replaces the content within the comments and re appends/prepends the comments to the replace for follow-up workflow runs. */
-    const regex = new RegExp(
-      `(<!-- ${action.marker} -->)[\\s\\S]*?(<!-- ${action.marker} -->)`,
-      'g'
-    )
+    const tierTemplates = JSON.parse(action.tierTemplatesJson)
     let data = await promises.readFile(action.file, 'utf8')
+    let hasMatches = false
+    
+    // 各tierTemplateに対する処理
+    Object.keys(tierTemplates).forEach(key => {
+      const template = tierTemplates[key];
+      const tierRegex = new RegExp(
+        `(<!-- ${action.marker}.${key} -->)[\\s\\S]*?(<!-- ${action.marker}.${key} -->)`,
+        'g'
+      );
+      
+      if (tierRegex.test(data)) {
+        // tierTemplate用に一時的にtemplateを置き換えて処理
+        data = data.replace(tierRegex, `$1${generateTemplate(response, action, template)}$2`)
+        hasMatches = true
+      }
+    });
 
-    if (!regex.test(data)) {
+    if (!hasMatches) {
       return Status.SKIPPED
     }
 
-    data = data.replace(regex, `$1${generateTemplate(response, action)}$2`)
-
     await promises.writeFile(action.file, data)
-
     return Status.SUCCESS
   } catch (error) {
     throw new Error(

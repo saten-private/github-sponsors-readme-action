@@ -36,8 +36,10 @@ inputs:
     description: This allows you to modify the marker comment that is placed in your file. By default this is set to sponsors - <!-- sponsors --> <!-- sponsors -->, if you set this to gold for example you can place <!-- gold --> <!-- gold --> in your file.
     required: false
 
-  template:
-    description: Allows you to modify the default template. Please refer to the `template` section of this README for more information.
+  tier-templates-json:
+    description: >
+      JSON string containing tier-specific templates. Format: { "tier_id": "template" }.
+      Example: '{"123456": "<img src=\"{{{ avatar }}}\" width=\"35px\">", "234567": "<h2>{{{ name }}}</h2>"}'
     required: false
 
   fallback:
