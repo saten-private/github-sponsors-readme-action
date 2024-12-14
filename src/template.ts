@@ -123,11 +123,14 @@ export function generateTemplate(
 
   if (sponsorshipsAsMaintainer) {
     console.log("sponsorshipsAsMaintainer" ,sponsorshipsAsMaintainer)
+    console.log("tierId" ,tierId)
     let filteredSponsors = sponsorshipsAsMaintainer.nodes.filter(
-      (user: Sponsor) =>
-        (user.tier && user.tier.monthlyPriceInCents
+      (user: Sponsor) => {
+        console.log("tier info:", user.tier)
+        return (user.tier && user.tier.monthlyPriceInCents
           ? user.tier.monthlyPriceInCents
           : 0) >= action.minimum && (user.tier && user.tier.id === tierId)
+      }
     )
 
     /**
