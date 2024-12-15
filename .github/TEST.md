@@ -2,13 +2,21 @@
 
 # All Sponsors
 
-## ウルフスポンサー
+<h3 align="center">
+ウルフスポンサー US$5
+</h3>
 
-<!-- sponsors-5 --><a href="https://github.com/JamesIves"><img src="https://github.com/JamesIves.png" width="60px" alt="" /></a><a href="https://github.com/MontezumaIves"><img src="https://github.com/MontezumaIves.png" width="60px" alt="" /></a><!-- sponsors-5 -->
+<p align="center">
+<!-- sponsors-5 --><!-- sponsors-5 -->
+</p>
 
-## スライムスポンサー
+<h3 align="center">
+スライムスポンサー US$1
+</h3>
 
-<!-- sponsors-1 --><a href="https://github.com/JamesIves"><img src="https://github.com/JamesIves.png" width="60px" alt="" /></a><a href="https://github.com/MontezumaIves"><img src="https://github.com/MontezumaIves.png" width="60px" alt="" /></a><!-- sponsors-1 -->
+<p align="center">
+<!-- sponsors-1 --><!-- sponsors-1 -->
+</p>
 
 # Silver Sponsors
 

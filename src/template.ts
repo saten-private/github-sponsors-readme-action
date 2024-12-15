@@ -194,7 +194,6 @@ export function generateTemplate(
         name: sanitizeAndClean(sponsorEntity.name || ''),
         login: sanitizeAndClean(sponsorEntity.login),
         avatarUrl: sponsorEntity.avatarUrl,
-        monthlyPriceInDollars: tierPriceInDollars
       }
 
       /**
