@@ -6,7 +6,7 @@ export declare function getSponsors(action: ActionInterface): Promise<GitHubResp
 /**
  * Generates the sponsorship template.
  */
-export declare function generateTemplate(response: GitHubResponse, action: ActionInterface, baseTemplate: string, tierId: string): string;
+export declare function generateTemplate(response: GitHubResponse, action: ActionInterface, baseTemplate: string, tierPriceInDollars: number): string;
 /**
  * Generates the updated file with the attached sponsorship template.
  */
