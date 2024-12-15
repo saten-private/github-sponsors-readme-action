@@ -143,8 +143,7 @@ The following options must be configured.
 | `maximum`         | Using this input you can set the maximum sponsorship threshold. For example setting this to `500` will only display sponsors who give of `$5 USD` and less. By default the action will display all of your sponsors.                                              | `with` | **No**   |
 | `marker`          | This allows you to modify the marker comment that is placed in your file. By default this is set to sponsors - `<!-- sponsors --> <!-- sponsors -->`, if you set this to `gold` for example you can place `<!-- gold --> <!-- gold -->` in your file.             | `with` | **No**   |
 | `fallback`        | Allows you to specify a fallback if you have no sponsors. By default nothing is displayed.                                                                                                                                                                        | `with` | **No**   |
-| `tier-templates-json`        | JSON string containing tier-specific templates. Format: { "tier_id": "template" }.
-Example: '{"123456": "%3Ca+href%3D%22https%3A%2F%2Fgithub.com%2F%7B%7B+login+%7D%7D%22%3E%3Cimg+src%3D%22%7B%7B+avatarUrl+%7D%7D%22+width%3D%2260px%22+alt%3D%22%7B%7B+name+%7D%7D%22+%2F%3E%3C%2Fa%3E"}'                                                               | `with` | **No**   |
+| `tier-templates-json`        | JSON string containing tier-specific templates. The template is [encodeURIComponent](https://developer.mozilla.org/ja/docs/Web/JavaScript/ReferenceGlobal_Objects/encodeURIComponent),[decodeURIComponent](https://developer.mozilla.org/en-US/docs/Web/JavaScriptReference/Global_Objects/decodeURIComponent) to encode URLs. URL encoding. Format: { "monthlyPriceInDollars": "template" }. Example: '{"5": "%3Ca%20href%3D%22https%3A%2F%2Fgithub.com%2F%7B%7B%20login%20%7D%7D%22%3E%3Cimg%20src%3D%22%7B%7B%20avatarUrl%20%7D%7D%22%20width%3D%2260px%22%20alt%3D%22%7B%7B%20name%20%7D%7D%22%20%2F%3E%3C%2Fa%3E", "1": "%3Ca%20href%3D%22https%3A%2F%2Fgithub.com%2F%7B%7B%20login%20%7D%7D%22%3E%3Cimg%20src%3D%22%7B%7B%20avatarUrl%20%7D%7D%22%20width%3D%2220px%22%20alt%3D%22%7B%7B%20name%20%7D%7D%22%20%2F%3E%3C%2Fa%3E"}'                                                               | `with` | **No**   |
 | `active-only`     | If set to `false`, inactive sponsors will be displayed. This can be useful if you want to display all sponsors, regardless of their status. By default this is set to `true`.                                                                                     | `with` | **No**   |
 | `include-private` | If set to `true`, private sponsors will be displayed in the list, however any identifying information will be redacted. This can be useful if you want to display all sponsors, regardless of their privacy settings.                                             | `with` | **No**   |
 
@@ -163,7 +162,7 @@ The action will export a step output as `sponsorship-status` that you can use in
 
 ### Modifying the Template 🔧
 
-You can modify the template for each tier that gets generated in your file by using the `tier-templates-json` input. This input allows you to leverage mustache templating to modify what is displayed. The following values are available.
+The `tier-templates-json` can be used to set up templates for each tier. This input allows the mustache template function to be used to modify what is displayed. The following values are available: template is [encodeURIComponent](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent),[decodeURIComponent](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/).
 
 | Status       | Description                                                                                                                                                              |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -198,7 +197,7 @@ jobs:
         with:
           token: ${{ secrets.PAT }}
           file: 'README.md'
-          tier-templates-json: '{"123456": "%3Ca+href%3D%22https%3A%2F%2Fgithub.com%2F%7B%7B+login+%7D%7D%22%3E%3Cimg+src%3D%22%7B%7B+avatarUrl+%7D%7D%22+width%3D%2260px%22+alt%3D%22%7B%7B+name+%7D%7D%22+%2F%3E%3C%2Fa%3E"}'
+          tier-templates-json: '{"5": "%3Ca%20href%3D%22https%3A%2F%2Fgithub.com%2F%7B%7B%20login%20%7D%7D%22%3E%3Cimg%20src%3D%22%7B%7B%20avatarUrl%20%7D%7D%22%20width%3D%2260px%22%20alt%3D%22%7B%7B%20name%20%7D%7D%22%20%2F%3E%3C%2Fa%3E", "1": "%3Ca%20href%3D%22https%3A%2F%2Fgithub.com%2F%7B%7B%20login%20%7D%7D%22%3E%3Cimg%20src%3D%22%7B%7B%20avatarUrl%20%7D%7D%22%20width%3D%2220px%22%20alt%3D%22%7B%7B%20name%20%7D%7D%22%20%2F%3E%3C%2Fa%3E"}'
 
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4
