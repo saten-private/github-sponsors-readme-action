@@ -4,11 +4,11 @@
 
 ## ウルフスポンサー
 
-<!-- sponsors-295853 --><a href="https://github.com/JamesIves"><img src="https://github.com/JamesIves.png" width="60px" alt="" /></a><a href="https://github.com/MontezumaIves"><img src="https://github.com/MontezumaIves.png" width="60px" alt="" /></a><!-- sponsors-295853 -->
+<!-- sponsors-5 --><a href="https://github.com/JamesIves"><img src="https://github.com/JamesIves.png" width="60px" alt="" /></a><a href="https://github.com/MontezumaIves"><img src="https://github.com/MontezumaIves.png" width="60px" alt="" /></a><!-- sponsors-5 -->
 
 ## スライムスポンサー
 
-<!-- sponsors-449705 --><a href="https://github.com/JamesIves"><img src="https://github.com/JamesIves.png" width="60px" alt="" /></a><a href="https://github.com/MontezumaIves"><img src="https://github.com/MontezumaIves.png" width="60px" alt="" /></a><!-- sponsors-449705 -->
+<!-- sponsors-1 --><a href="https://github.com/JamesIves"><img src="https://github.com/JamesIves.png" width="60px" alt="" /></a><a href="https://github.com/MontezumaIves"><img src="https://github.com/MontezumaIves.png" width="60px" alt="" /></a><!-- sponsors-1 -->
 
 # Silver Sponsors
 
