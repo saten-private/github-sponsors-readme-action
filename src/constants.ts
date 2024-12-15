@@ -92,7 +92,7 @@ export interface Sponsor {
   createdAt: string
   privacyLevel?: PrivacyLevel
   tier?: {
-    id: string
+    monthlyPriceInDollars?: number
     monthlyPriceInCents?: number
   }
 }

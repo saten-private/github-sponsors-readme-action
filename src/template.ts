@@ -63,9 +63,7 @@ export async function getSponsors(
             createdAt
             privacyLevel
             tier {
-              id
-              name
-              description
+              monthlyPriceInDollars
               monthlyPriceInCents
             }
           }
@@ -103,7 +101,7 @@ export function generateTemplate(
   response: GitHubResponse,
   action: ActionInterface,
   baseTemplate: string,
-  tierId: string
+  tierPriceInDollars: number
 ): string {
   let template = ``
 
@@ -124,14 +122,13 @@ export function generateTemplate(
   const sponsorshipsAsMaintainer = data?.sponsorshipsAsMaintainer
 
   if (sponsorshipsAsMaintainer) {
-    console.log("sponsorshipsAsMaintainer" ,sponsorshipsAsMaintainer)
-    console.log("tierId" ,tierId)
+    console.log("tiertierPriceInDollarsId" ,tierPriceInDollars)
     let filteredSponsors = sponsorshipsAsMaintainer.nodes.filter(
       (user: Sponsor) => {
         console.log("tier info:", user.tier)
         return (user.tier && user.tier.monthlyPriceInCents
           ? user.tier.monthlyPriceInCents
-          : 0) >= action.minimum && (user.tier && user.tier.id === tierId)
+          : 0) >= action.minimum && (user.tier && user.tier.monthlyPriceInDollars === tierPriceInDollars)
       }
     )
 
@@ -189,13 +186,18 @@ export function generateTemplate(
       /**
        * Sanitizes and cleans the sponsor data individually.
        */
+
+      const tierEntity = {
+        monthlyPriceInDollars: tierPriceInDollars,
+      }
+
       const sanitizedSponsorEntity = {
         websiteUrl: sanitizeAndClean(
           sponsorEntity.websiteUrl || sponsorEntity.url
         ),
         name: sanitizeAndClean(sponsorEntity.name || ''),
         login: sanitizeAndClean(sponsorEntity.login),
-        avatarUrl: sponsorEntity.avatarUrl
+        avatarUrl: sponsorEntity.avatarUrl,
       }
 
       /**
@@ -207,7 +209,8 @@ export function generateTemplate(
         '}}'
       )
 
-      template = template += render(safeTemplate, sanitizedSponsorEntity)
+      const temp = render(safeTemplate, tierEntity)
+      template = template += render(temp, sanitizedSponsorEntity)
     })
   } else {
     info(`No sponsorship data was found… ❌`)
@@ -242,7 +245,7 @@ export async function generateFile(
       
       if (tierRegex.test(data)) {
         // tierTemplate用に一時的にtemplateを置き換えて処理
-        data = data.replace(tierRegex, `$1${generateTemplate(response, action, template, key)}$2`)
+        data = data.replace(tierRegex, `$1${generateTemplate(response, action, template, Number(key))}$2`)
         hasMatches = true
       }
     });
