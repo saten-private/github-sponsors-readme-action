@@ -24,10 +24,11 @@ jobs:
           # URLエンコードは下記参照
           # https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
           # https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent
-          tier-templates-json: '{
-	          "1": "%3Ch3%20align%3D%22center%22%3E%E3%82%B9%E3%83%A9%E3%82%A4%E3%83%A0%E3%82%B9%E3%83%9D%E3%83%B3%E3%82%B5%E3%83%BC%20US%24%7B%7B%20monthlyPriceInDollars%20%7D%7D%3C%2Fh3%3E%3Cp%20align%3D%22center%22%3E%3Ca%20href%3D%22https%3A%2F%2Fgithub.com%2F%7B%7B%20login%20%7D%7D%22%3E%3Cimg%20src%3D%22%7B%7B%20avatarUrl%20%7D%7D%22%20width%3D%2260px%22%20alt%3D%22%7B%7B%20name%20%7D%7D%22%20%2F%3E%3C%2Fa%3E%3C%2Fp%3E",
-	          "5": "%3Ch3%20align%3D%22center%22%3E%E3%82%A6%E3%83%AB%E3%83%95%E3%82%B9%E3%83%9D%E3%83%B3%E3%82%B5%E3%83%BC%20US%24%7B%7B%20monthlyPriceInDollars%20%7D%7D%3C%2Fh3%3E%3Cp%20align%3D%22center%22%3E%3Ca%20href%3D%22https%3A%2F%2Fgithub.com%2F%7B%7B%20login%20%7D%7D%22%3E%3Cimg%20src%3D%22%7B%7B%20avatarUrl%20%7D%7D%22%20width%3D%2260px%22%20alt%3D%22%7B%7B%20name%20%7D%7D%22%20%2F%3E%3C%2Fa%3E%3C%2Fp%3E"
-	        }'
+          tier-templates-json: >
+            {
+	            "1": "%3Ch3%20align%3D%22center%22%3E%E3%82%B9%E3%83%A9%E3%82%A4%E3%83%A0%E3%82%B9%E3%83%9D%E3%83%B3%E3%82%B5%E3%83%BC%20US%24%7B%7B%20monthlyPriceInDollars%20%7D%7D%3C%2Fh3%3E%3Cp%20align%3D%22center%22%3E%3Ca%20href%3D%22https%3A%2F%2Fgithub.com%2F%7B%7B%20login%20%7D%7D%22%3E%3Cimg%20src%3D%22%7B%7B%20avatarUrl%20%7D%7D%22%20width%3D%2260px%22%20alt%3D%22%7B%7B%20name%20%7D%7D%22%20%2F%3E%3C%2Fa%3E%3C%2Fp%3E",
+	            "5": "%3Ch3%20align%3D%22center%22%3E%E3%82%A6%E3%83%AB%E3%83%95%E3%82%B9%E3%83%9D%E3%83%B3%E3%82%B5%E3%83%BC%20US%24%7B%7B%20monthlyPriceInDollars%20%7D%7D%3C%2Fh3%3E%3Cp%20align%3D%22center%22%3E%3Ca%20href%3D%22https%3A%2F%2Fgithub.com%2F%7B%7B%20login%20%7D%7D%22%3E%3Cimg%20src%3D%22%7B%7B%20avatarUrl%20%7D%7D%22%20width%3D%2260px%22%20alt%3D%22%7B%7B%20name%20%7D%7D%22%20%2F%3E%3C%2Fa%3E%3C%2Fp%3E"
+	          }
           
       - name: Generate Sponsors 💖
         uses: saten-private/github-sponsors-readme-action@releases/v1
@@ -42,10 +43,11 @@ jobs:
           # URLエンコードは下記参照
           # https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
           # https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent
-          tier-templates-json: '{
-	          "1": "%3Ch3%20align%3D%22center%22%3E%E3%82%B9%E3%83%A9%E3%82%A4%E3%83%A0%E3%82%B9%E3%83%9D%E3%83%B3%E3%82%B5%E3%83%BC%20US%24%7B%7B%20monthlyPriceInDollars%20%7D%7D%3C%2Fh3%3E%3Cp%20align%3D%22center%22%3E%3Ca%20href%3D%22https%3A%2F%2Fgithub.com%2F%7B%7B%20login%20%7D%7D%22%3E%3Cimg%20src%3D%22%7B%7B%20avatarUrl%20%7D%7D%22%20width%3D%2260px%22%20alt%3D%22%7B%7B%20name%20%7D%7D%22%20%2F%3E%3C%2Fa%3E%3C%2Fp%3E",
-	          "5": "%3Ch3%20align%3D%22center%22%3E%E3%82%A6%E3%83%AB%E3%83%95%E3%82%B9%E3%83%9D%E3%83%B3%E3%82%B5%E3%83%BC%20US%24%7B%7B%20monthlyPriceInDollars%20%7D%7D%3C%2Fh3%3E%3Cp%20align%3D%22center%22%3E%3Ca%20href%3D%22https%3A%2F%2Fgithub.com%2F%7B%7B%20login%20%7D%7D%22%3E%3Cimg%20src%3D%22%7B%7B%20avatarUrl%20%7D%7D%22%20width%3D%2260px%22%20alt%3D%22%7B%7B%20name%20%7D%7D%22%20%2F%3E%3C%2Fa%3E%3C%2Fp%3E"
-	        }'
+          tier-templates-json: >
+            {
+	            "1": "%3Ch3%20align%3D%22center%22%3E%E3%82%B9%E3%83%A9%E3%82%A4%E3%83%A0%E3%82%B9%E3%83%9D%E3%83%B3%E3%82%B5%E3%83%BC%20US%24%7B%7B%20monthlyPriceInDollars%20%7D%7D%3C%2Fh3%3E%3Cp%20align%3D%22center%22%3E%3Ca%20href%3D%22https%3A%2F%2Fgithub.com%2F%7B%7B%20login%20%7D%7D%22%3E%3Cimg%20src%3D%22%7B%7B%20avatarUrl%20%7D%7D%22%20width%3D%2260px%22%20alt%3D%22%7B%7B%20name%20%7D%7D%22%20%2F%3E%3C%2Fa%3E%3C%2Fp%3E",
+	            "5": "%3Ch3%20align%3D%22center%22%3E%E3%82%A6%E3%83%AB%E3%83%95%E3%82%B9%E3%83%9D%E3%83%B3%E3%82%B5%E3%83%BC%20US%24%7B%7B%20monthlyPriceInDollars%20%7D%7D%3C%2Fh3%3E%3Cp%20align%3D%22center%22%3E%3Ca%20href%3D%22https%3A%2F%2Fgithub.com%2F%7B%7B%20login%20%7D%7D%22%3E%3Cimg%20src%3D%22%7B%7B%20avatarUrl%20%7D%7D%22%20width%3D%2260px%22%20alt%3D%22%7B%7B%20name%20%7D%7D%22%20%2F%3E%3C%2Fa%3E%3C%2Fp%3E"
+	          }
 
       - name: Generate Sponsors 💖
         uses: saten-private/github-sponsors-readme-action@releases/v1
@@ -59,7 +61,8 @@ jobs:
           # URLエンコードは下記参照
           # https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
           # https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent
-          tier-templates-json: '{
-	          "1": "%3Ch3%20align%3D%22center%22%3E%E3%82%B9%E3%83%A9%E3%82%A4%E3%83%A0%E3%82%B9%E3%83%9D%E3%83%B3%E3%82%B5%E3%83%BC%20US%24%7B%7B%20monthlyPriceInDollars%20%7D%7D%3C%2Fh3%3E%3Cp%20align%3D%22center%22%3E%3Ca%20href%3D%22https%3A%2F%2Fgithub.com%2F%7B%7B%20login%20%7D%7D%22%3E%3Cimg%20src%3D%22%7B%7B%20avatarUrl%20%7D%7D%22%20width%3D%2260px%22%20alt%3D%22%7B%7B%20name%20%7D%7D%22%20%2F%3E%3C%2Fa%3E%3C%2Fp%3E",
-	          "5": "%3Ch3%20align%3D%22center%22%3E%E3%82%A6%E3%83%AB%E3%83%95%E3%82%B9%E3%83%9D%E3%83%B3%E3%82%B5%E3%83%BC%20US%24%7B%7B%20monthlyPriceInDollars%20%7D%7D%3C%2Fh3%3E%3Cp%20align%3D%22center%22%3E%3Ca%20href%3D%22https%3A%2F%2Fgithub.com%2F%7B%7B%20login%20%7D%7D%22%3E%3Cimg%20src%3D%22%7B%7B%20avatarUrl%20%7D%7D%22%20width%3D%2260px%22%20alt%3D%22%7B%7B%20name%20%7D%7D%22%20%2F%3E%3C%2Fa%3E%3C%2Fp%3E"
-	        }'
+          tier-templates-json: >
+            {
+	            "1": "%3Ch3%20align%3D%22center%22%3E%E3%82%B9%E3%83%A9%E3%82%A4%E3%83%A0%E3%82%B9%E3%83%9D%E3%83%B3%E3%82%B5%E3%83%BC%20US%24%7B%7B%20monthlyPriceInDollars%20%7D%7D%3C%2Fh3%3E%3Cp%20align%3D%22center%22%3E%3Ca%20href%3D%22https%3A%2F%2Fgithub.com%2F%7B%7B%20login%20%7D%7D%22%3E%3Cimg%20src%3D%22%7B%7B%20avatarUrl%20%7D%7D%22%20width%3D%2260px%22%20alt%3D%22%7B%7B%20name%20%7D%7D%22%20%2F%3E%3C%2Fa%3E%3C%2Fp%3E",
+	            "5": "%3Ch3%20align%3D%22center%22%3E%E3%82%A6%E3%83%AB%E3%83%95%E3%82%B9%E3%83%9D%E3%83%B3%E3%82%B5%E3%83%BC%20US%24%7B%7B%20monthlyPriceInDollars%20%7D%7D%3C%2Fh3%3E%3Cp%20align%3D%22center%22%3E%3Ca%20href%3D%22https%3A%2F%2Fgithub.com%2F%7B%7B%20login%20%7D%7D%22%3E%3Cimg%20src%3D%22%7B%7B%20avatarUrl%20%7D%7D%22%20width%3D%2260px%22%20alt%3D%22%7B%7B%20name%20%7D%7D%22%20%2F%3E%3C%2Fa%3E%3C%2Fp%3E"
+	          }
