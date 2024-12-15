@@ -187,10 +187,6 @@ export function generateTemplate(
        * Sanitizes and cleans the sponsor data individually.
        */
 
-      const tierEntity = {
-        monthlyPriceInDollars: tierPriceInDollars,
-      }
-
       const sanitizedSponsorEntity = {
         websiteUrl: sanitizeAndClean(
           sponsorEntity.websiteUrl || sponsorEntity.url
@@ -198,6 +194,7 @@ export function generateTemplate(
         name: sanitizeAndClean(sponsorEntity.name || ''),
         login: sanitizeAndClean(sponsorEntity.login),
         avatarUrl: sponsorEntity.avatarUrl,
+        monthlyPriceInDollars: tierPriceInDollars
       }
 
       /**
@@ -209,8 +206,7 @@ export function generateTemplate(
         '}}'
       )
 
-      const temp = render(safeTemplate, tierEntity)
-      template = template += render(temp, sanitizedSponsorEntity)
+      template = template += render(safeTemplate, sanitizedSponsorEntity)
     })
   } else {
     info(`No sponsorship data was found… ❌`)
